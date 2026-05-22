@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="4ZTkePqDzm6QfxjCdMaX">
+    <mxGraphModel dx="715" dy="1344" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="0eYglA7vojebu7hKJrVu-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;⚙️ Orchestrator Python&lt;/b&gt;&lt;br&gt;(Dirijorul Central)" vertex="1">
+          <mxGeometry height="80" width="160" x="370" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="🕒 CRON Job&lt;br&gt;(Ora 03:00)" vertex="1">
+          <mxGeometry height="60" width="120" x="120" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-3" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;" value="🗄️ Baza de Date&lt;br&gt;(SQLite)" vertex="1">
+          <mxGeometry height="100" width="100" x="130" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="📊 YT Analytics API&lt;br&gt;(Bucla de învățare)" vertex="1">
+          <mxGeometry height="60" width="120" x="120" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="📝 OpenAI GPT-4&lt;br&gt;(Curba BRUHZEN)" vertex="1">
+          <mxGeometry height="60" width="140" x="620" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="🗣️ ElevenLabs API&lt;br&gt;(Voce Emoțională)" vertex="1">
+          <mxGeometry height="60" width="140" x="620" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="📥 Pexels API&lt;br&gt;(Video Stock)" vertex="1">
+          <mxGeometry height="60" width="140" x="620" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bac8d3;strokeColor=#23445d;" value="👂 Whisper ASR&lt;br&gt;(Marcaje Timp)" vertex="1">
+          <mxGeometry height="60" width="140" x="620" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bac8d3;strokeColor=#23445d;fontStyle=1" value="🎬 FFmpeg Editor&lt;br&gt;(Asamblare &amp; Unicitate)" vertex="1">
+          <mxGeometry height="60" width="140" x="620" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="🔴 YouTube API&lt;br&gt;(Upload &amp; SEO)" vertex="1">
+          <mxGeometry height="60" width="140" x="620" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-11" edge="1" parent="1" source="0eYglA7vojebu7hKJrVu-2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;" target="0eYglA7vojebu7hKJrVu-1" value="Trezire Zilnică">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-12" edge="1" parent="1" source="0eYglA7vojebu7hKJrVu-3" style="edgeStyle=straightEdgeStyle;html=1;startArrow=block;endArrow=block;" target="0eYglA7vojebu7hKJrVu-1" value="1. Istoric &amp; Status">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-13" edge="1" parent="1" source="0eYglA7vojebu7hKJrVu-4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;" target="0eYglA7vojebu7hKJrVu-3" value="Salvează retenția">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-14" edge="1" parent="1" source="0eYglA7vojebu7hKJrVu-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;" target="0eYglA7vojebu7hKJrVu-4" value="Verifică clip vechi">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="450" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-15" edge="1" parent="1" source="0eYglA7vojebu7hKJrVu-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;startArrow=block;endArrow=block;" target="0eYglA7vojebu7hKJrVu-5" value="2. Prompt / Script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-16" edge="1" parent="1" source="0eYglA7vojebu7hKJrVu-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;startArrow=block;endArrow=block;" target="0eYglA7vojebu7hKJrVu-6" value="3. Text / .mp3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-17" edge="1" parent="1" source="0eYglA7vojebu7hKJrVu-1" style="edgeStyle=straightEdgeStyle;html=1;startArrow=block;endArrow=block;" target="0eYglA7vojebu7hKJrVu-7" value="4. Cerere / .mp4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-18" edge="1" parent="1" source="0eYglA7vojebu7hKJrVu-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;startArrow=block;endArrow=block;" target="0eYglA7vojebu7hKJrVu-8" value="5. Audio / Subtitrări">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-19" edge="1" parent="1" source="0eYglA7vojebu7hKJrVu-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;startArrow=block;endArrow=block;" target="0eYglA7vojebu7hKJrVu-9" value="6. Editare Video">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-20" edge="1" parent="1" source="0eYglA7vojebu7hKJrVu-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;" target="0eYglA7vojebu7hKJrVu-10" value="7. Upload Final">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0eYglA7vojebu7hKJrVu-21" connectable="0" parent="0eYglA7vojebu7hKJrVu-20" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Text" vertex="1">
+          <mxGeometry relative="1" x="-0.5905" as="geometry">
+            <mxPoint y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
