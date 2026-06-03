@@ -1,49 +1,101 @@
-<project_root name="ai_shorts_studio">
-    <!-- Fișierul care dirijează containerele -->
-    <file name="docker-compose.yml" />
-    
-    <!-- Containerul 1: Logica și Generarea -->
-    <directory name="orchestrator_python">
-        <file name="Dockerfile" />
-        <file name="requirements.txt" />
-        <file name="main_loop.py" description="Scriptul CRON care declanșează fluxul" />
-        <directory name="modules">
-            <file name="claude_director.py" description="Prompting și generare script JSON" />
-            <file name="voice_elevenlabs.py" description="Generare TTS" />
-            <file name="whisper_sync.py" description="Extragere timestamps și tăiere pauze" />
-            <file name="image_generator.py" description="Apel API pentru fundaluri unice" />
-            <file name="youtube_uploader.py" description="Upload via API ca Draft" />
-        </directory>
-        <directory name="database">
-            <file name="channels.db" description="Baza de date SQLite" />
-        </directory>
-    </directory>
+<mxfile host="app.diagrams.net">
+  <diagram name="Arhitectura_Studio" id="ai_shorts_studio_01">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <mxCell id="root_folder" value="📁 ai_shorts_studio" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="docker_compose" value="🐳 docker-compose.yml" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="250" y="450" width="140" height="40" as="geometry" />
+        </mxCell>
 
-    <!-- Containerul 2: Randarea Video -->
-    <directory name="remotion_engine">
-        <file name="Dockerfile" />
-        <file name="package.json" />
-        <file name="remotion.config.ts" />
-        <directory name="src">
-            <file name="Root.tsx" description="Înregistrarea compozițiilor video" />
-            <file name="MainComposition.tsx" description="Șablonul vizual principal (stilul Pham)" />
-            <directory name="components">
-                <file name="DynamicSubtitle.tsx" description="Animațiile textului (Kinetic Typography)" />
-                <file name="BackgroundManager.tsx" description="Gestionarea imaginilor și a tranzițiilor" />
-            </directory>
-        </directory>
-    </directory>
+        <mxCell id="dir_python" value="📁 orchestrator_python" style="shape=folder;fontStyle=1;tabWidth=140;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="250" y="160" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="py_dockerfile" value="Dockerfile" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="450" y="40" width="120" height="30" as="geometry" /></mxCell>
+        <mxCell id="py_req" value="requirements.txt" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="450" y="80" width="120" height="30" as="geometry" /></mxCell>
+        <mxCell id="py_main" value="main_loop.py" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="450" y="120" width="120" height="30" as="geometry" /></mxCell>
+        
+        <mxCell id="dir_modules" value="📁 modules" style="shape=folder;html=1;boundedLbl=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1"><mxGeometry x="450" y="180" width="120" height="40" as="geometry" /></mxCell>
+        <mxCell id="mod_claude" value="claude_director.py" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="610" y="120" width="130" height="30" as="geometry" /></mxCell>
+        <mxCell id="mod_eleven" value="voice_elevenlabs.py" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="610" y="160" width="130" height="30" as="geometry" /></mxCell>
+        <mxCell id="mod_whisper" value="whisper_sync.py" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="610" y="200" width="130" height="30" as="geometry" /></mxCell>
+        <mxCell id="mod_img" value="image_generator.py" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="610" y="240" width="130" height="30" as="geometry" /></mxCell>
+        <mxCell id="mod_yt" value="youtube_uploader.py" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="610" y="280" width="130" height="30" as="geometry" /></mxCell>
 
-    <!-- Folderul comun: Puntea dintre cele două containere -->
-    <directory name="shared_workspace">
-        <directory name="project_xyz_123">
-            <file name="director_script.json" description="Scenariul și coordonatele de la Claude/Whisper" />
-            <file name="voiceover.mp3" />
-            <directory name="assets">
-                <file name="bg_1.jpg" />
-                <file name="bg_2.jpg" />
-            </directory>
-            <file name="final_render.mp4" description="Produsul final generat de Remotion" />
-        </directory>
-    </directory>
-</project_root>
+        <mxCell id="dir_db" value="📁 database" style="shape=folder;html=1;boundedLbl=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1"><mxGeometry x="450" y="280" width="120" height="40" as="geometry" /></mxCell>
+        <mxCell id="db_file" value="channels.db" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1"><mxGeometry x="610" y="320" width="80" height="50" as="geometry" /></mxCell>
+
+        <mxCell id="dir_remotion" value="📁 remotion_engine" style="shape=folder;fontStyle=1;tabWidth=130;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="250" y="640" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rem_dockerfile" value="Dockerfile" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="450" y="560" width="120" height="30" as="geometry" /></mxCell>
+        <mxCell id="rem_pkg" value="package.json" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="450" y="600" width="120" height="30" as="geometry" /></mxCell>
+        <mxCell id="rem_conf" value="remotion.config.ts" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="450" y="640" width="120" height="30" as="geometry" /></mxCell>
+
+        <mxCell id="dir_src" value="📁 src" style="shape=folder;html=1;boundedLbl=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1"><mxGeometry x="450" y="700" width="120" height="40" as="geometry" /></mxCell>
+        <mxCell id="src_root" value="Root.tsx" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="610" y="660" width="130" height="30" as="geometry" /></mxCell>
+        <mxCell id="src_main" value="MainComposition.tsx" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="610" y="700" width="140" height="30" as="geometry" /></mxCell>
+        
+        <mxCell id="dir_comp" value="📁 components" style="shape=folder;html=1;boundedLbl=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1"><mxGeometry x="610" y="750" width="120" height="40" as="geometry" /></mxCell>
+        <mxCell id="comp_sub" value="DynamicSubtitle.tsx" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="780" y="730" width="130" height="30" as="geometry" /></mxCell>
+        <mxCell id="comp_bg" value="BackgroundManager.tsx" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="780" y="770" width="150" height="30" as="geometry" /></mxCell>
+
+        <mxCell id="dir_shared" value="📁 shared_workspace" style="shape=folder;fontStyle=1;tabWidth=140;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="250" y="900" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dir_proj" value="📁 project_xyz_123" style="shape=folder;html=1;boundedLbl=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="450" y="910" width="130" height="40" as="geometry" /></mxCell>
+        <mxCell id="proj_json" value="director_script.json" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="620" y="870" width="120" height="30" as="geometry" /></mxCell>
+        <mxCell id="proj_mp3" value="voiceover.mp3" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="620" y="910" width="120" height="30" as="geometry" /></mxCell>
+        <mxCell id="proj_mp4" value="final_render.mp4" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#d5e8d4;" vertex="1" parent="1"><mxGeometry x="620" y="1030" width="120" height="30" as="geometry" /></mxCell>
+
+        <mxCell id="dir_assets" value="📁 assets" style="shape=folder;html=1;boundedLbl=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="620" y="960" width="120" height="40" as="geometry" /></mxCell>
+        <mxCell id="ast_1" value="bg_1.jpg" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="780" y="940" width="80" height="30" as="geometry" /></mxCell>
+        <mxCell id="ast_2" value="bg_2.jpg" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="780" y="980" width="80" height="30" as="geometry" /></mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="root_folder" target="docker_compose"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="root_folder" target="dir_python"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="120" y="190"/></Array></mxGeometry></mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="root_folder" target="dir_remotion"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="120" y="670"/></Array></mxGeometry></mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="root_folder" target="dir_shared"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="120" y="930"/></Array></mxGeometry></mxCell>
+
+        <mxCell id="e_py1" edge="1" parent="1" source="dir_python" target="py_dockerfile"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_py2" edge="1" parent="1" source="dir_python" target="py_req"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_py3" edge="1" parent="1" source="dir_python" target="py_main"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_py4" edge="1" parent="1" source="dir_python" target="dir_modules"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_py5" edge="1" parent="1" source="dir_python" target="dir_db"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_mod1" edge="1" parent="1" source="dir_modules" target="mod_claude"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_mod2" edge="1" parent="1" source="dir_modules" target="mod_eleven"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_mod3" edge="1" parent="1" source="dir_modules" target="mod_whisper"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_mod4" edge="1" parent="1" source="dir_modules" target="mod_img"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_mod5" edge="1" parent="1" source="dir_modules" target="mod_yt"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_db1" edge="1" parent="1" source="dir_db" target="db_file"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_rem1" edge="1" parent="1" source="dir_remotion" target="rem_dockerfile"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_rem2" edge="1" parent="1" source="dir_remotion" target="rem_pkg"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_rem3" edge="1" parent="1" source="dir_remotion" target="rem_conf"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_rem4" edge="1" parent="1" source="dir_remotion" target="dir_src"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_src1" edge="1" parent="1" source="dir_src" target="src_root"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_src2" edge="1" parent="1" source="dir_src" target="src_main"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_src3" edge="1" parent="1" source="dir_src" target="dir_comp"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_comp1" edge="1" parent="1" source="dir_comp" target="comp_sub"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_comp2" edge="1" parent="1" source="dir_comp" target="comp_bg"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_sh1" edge="1" parent="1" source="dir_shared" target="dir_proj"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_pj1" edge="1" parent="1" source="dir_proj" target="proj_json"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_pj2" edge="1" parent="1" source="dir_proj" target="proj_mp3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_pj3" edge="1" parent="1" source="dir_proj" target="dir_assets"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_pj4" edge="1" parent="1" source="dir_proj" target="proj_mp4"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_ast1" edge="1" parent="1" source="dir_assets" target="ast_1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_ast2" edge="1" parent="1" source="dir_assets" target="ast_2"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
